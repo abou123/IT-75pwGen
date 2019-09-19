@@ -17,6 +17,7 @@ def xkcd_pw_gen():
         else:
             selector = adjs
 
-        pw = pw + selector[random.randint(0, len(selector) - 1)]
+        pw = pw + selector[random.randint(0, len(selector) - 1)] + " "
 
+    pw = pw.strip()
     return pw
