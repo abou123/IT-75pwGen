@@ -3,18 +3,20 @@ from password_good import nouns
 from password_good import verbs
 from password_good import adjs
 
-pw = ""
 
-for i in range(4):
-    selector = random.randint(0, 2)
+def xkcd_pw_gen():
+    pw = ""
 
-    if selector == 0:
-        selector = nouns
-    elif selector == 1:
-        selector = verbs
-    else:
-        selector = adjs
+    for i in range(4):
+        selector = random.randint(0, 2)
 
-    pw = pw + selector[random.randint(0, len(selector) - 1)]
+        if selector == 0:
+            selector = nouns
+        elif selector == 1:
+            selector = verbs
+        else:
+            selector = adjs
 
-print("password is: ", pw)
+        pw = pw + selector[random.randint(0, len(selector) - 1)]
+
+    return pw
